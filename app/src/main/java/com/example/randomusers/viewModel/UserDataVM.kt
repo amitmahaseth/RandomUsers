@@ -16,14 +16,14 @@ class UserDataVM(var mContext: Context) : ViewModel() {
 
     var apiInterface = ServiceClient.apiClient().create(ApiInterface::class.java)
 
-    suspend fun getUsersDataVM(result: Int): LiveData<RandomUserListResponse> {
+    suspend fun getUsersDataVM(result: Int, gender: String): LiveData<RandomUserListResponse> {
         val mutableLiveData = MutableLiveData<RandomUserListResponse>()
 
         if (mContext.isInternetAvailable()) {
 
             try {
                 Extensions.showProgess(mContext)
-                var response = apiInterface.getUserdata(result)
+                var response = apiInterface.getUserdata(result, gender)
                 if (response.code() == 200) {
                     Extensions.stopProgress()
                     mutableLiveData.postValue(response.body())

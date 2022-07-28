@@ -2,7 +2,7 @@ package com.example.randomusers.model
 
 data class RandomUserListResponse(
     val info: Info,
-    val results: List<Result>
+    val results: ArrayList<Result>
 )
 
 data class Info(

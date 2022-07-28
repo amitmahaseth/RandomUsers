@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchViewLanguages"
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#EEEEEE"
@@ -28,7 +28,7 @@
             app:queryHint="Search for a name" />
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_men"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -38,6 +38,8 @@
         android:text="@string/men"
         android:textAllCaps="false"
         android:textColor="@color/black"
+        android:elevation="@dimen/_5sdp"
+        android:shadowColor="@color/black"
         android:textStyle="bold"
         app:cornerRadius="@dimen/_5sdp"
         app:layout_constraintEnd_toStartOf="@+id/btn_women"
@@ -45,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardSearch" />
 
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_women"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,6 +57,8 @@
         android:background="@drawable/stroke_button"
         android:text="@string/women"
         android:textAllCaps="false"
+        android:elevation="@dimen/_5sdp"
+        android:shadowColor="@color/black"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:cornerRadius="@dimen/_5sdp"
@@ -68,6 +72,9 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
+        tools:listitem="@layout/user_list"
+        android:id="@+id/rvUserList"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

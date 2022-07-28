@@ -9,6 +9,7 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET(Constant.USERDATA)
-    suspend fun getUserdata(@Query("results")results:Int):Response<RandomUserListResponse>
+    suspend fun getUserdata(@Query("results")results:Int, @Query("gender")gender:String
+    ):Response<RandomUserListResponse>
 
 }
